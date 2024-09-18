@@ -1,7 +1,6 @@
-// 
 
 
-// 
+// 1:13:00 video cursor effect 
 
 
 function init() {
@@ -29,6 +28,13 @@ function init() {
 
 init();
 
+var crsr = document.querySelector(".cursor")
+var main = document.querySelector(".main")
+main.addEventListener("mousemove",function(dets){
+    crsr.style.left = dets.x+"px"
+    crsr.style.top = dets.y+"px"
+
+})
 
 var tl = gsap.timeline({
     scrollTrigger: {
