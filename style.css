@@ -86,5 +86,56 @@ html, body{
     transform: translate(-50%,0);
 }
 
- 
+.page2{
+    min-height: 130vh;
+    width: 100%;
+    padding: 100px 5vw;
+}
+
+.page2-container{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0 5vw; */
+}
+
+.page2 h1{
+    font-size: 7vw;
+    font-weight: 300;
+    color: #111;
+    width: 70vw;
+}
+
+.page2-left{
+    width: 38%;
+}
+
+.page2-right{
+    width: 24%;
+}
+
+.page2-left h2{
+    font-size: 4vw;
+    font-weight: 300;
+    color: #111;
+}
+
+.page2-right p{
+    font-size: 28px;
+    color: #111;
+}
+
+.page2-right button{
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    padding: 4px 0;
+    background-color: #edbfff;
+    color: #111;
+    margin-top: 20px;
+}
+
+
 

@@ -6,6 +6,7 @@
 
 function init() {
     gsap.registerPlugin(ScrollTrigger);
+    
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector(".main"),
         smooth: true
@@ -21,6 +22,7 @@ function init() {
         },
         pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
     });
+
     ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
     ScrollTrigger.refresh();
 }
@@ -29,7 +31,7 @@ init();
 
 
 var tl = gsap.timeline({
-    ScrollTrigger: {
+    scrollTrigger: {
         trigger: ".page1 h1",
         scroller: ".main",
         markers: true,
@@ -40,16 +42,30 @@ var tl = gsap.timeline({
 });
 tl.to(".page1 h1", {
     x: -100,
-    // duration:1,
-},"anim");
+},"anim")
+
 tl.to(".page1 h2",{
     x:100
-},"anim");
-// tl.to(".page1 video", {
-//     width: "90%"
-// },"anim");
+},"anim")
 
- 
+tl.to(".page1 video", {
+    width: "90%"
+},"anim")
+
+var tl2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".page1 h1",
+        scroller: ".main",
+        markers: true,
+        start: "top -115%",
+        end: "top -130",
+        scrub: 3
+    }
+})
+
+tl2.to(".main",{
+    backgroundColor:"#fff"
+})
 
 
 
