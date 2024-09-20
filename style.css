@@ -12,6 +12,7 @@ html,
 body {
     height: 100%;
     width: 100%;
+    -webkit-user-select: none;
 }
 
 .cursor {
@@ -121,7 +122,7 @@ body {
 }
 
 .page2 {
-    min-height: 130vh;
+    min-height: 110vh;
     width: 100%;
     padding: 100px 5vw;
     border-bottom: 2px solid #6c6c6c;
@@ -200,7 +201,9 @@ body {
 
 .page3-part1 img,
 .page3-part2 img {
-    height: 400px;
+    height: 450px;
+    width: 600px;
+    object-fit: cover;
     margin-top: 160px;
 }
 
@@ -211,6 +214,7 @@ body {
 }
 
 .page4 {
+    margin-top: 50px;
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -228,6 +232,9 @@ body {
 }
 
 .elem img {
+    height: 200px;
+    width: 350px;
+    object-fit: cover;
     position: absolute;
     opacity: 0;
     transition: all ease-out 0.5s;
@@ -240,8 +247,8 @@ body {
 }
 
 .elem img:nth-child(3) {
-    right: 5%;
-    height: 50vh;
+    right: 2%;
+    height: 60vh;
 }
 
 .text-div {
@@ -263,7 +270,6 @@ body {
 }
 
 .elem:hover img {
-    /* background-color: black; */
     opacity: 1;
     transform: translateY(0%) rotate(0deg);
 }
@@ -296,29 +302,37 @@ body {
     border-bottom: 1.5px solid #dadada;
 }
 
-footer {
-    height: 90vh;
+.footer {
+    height: 100vh;
     width: 100%;
     background-color: #edbfff;
-    padding: 100px 100px;
+    padding: 80px 100px;
     color: #111;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: stretch; */
+    gap: 40px;
+    z-index: 9;
 }
 
 .footer-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 .footer-top h2 {
+    color: #111;
     font-size: 6.8vw;
     font-weight: 300;
 }
 
 #gola {
     background-color: #fff;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -327,11 +341,42 @@ footer {
     color: #111;
     font-size: 14px;
     cursor: none;
+    margin-right: 10vh;
 }
 
-.footer-socials{
+.footer h4 {
+    color: #111;
+}
+
+.footer-socials {
+    color: #111;
     display: flex;
-    align-items: center;
+    align-items: first baseline;
     justify-content: space-between;
+    width: 70vw;
+}
+
+.footer-info-box h5 {
+    color: #111;
+    text-transform: uppercase;
+}
+
+.footer-info-box p,
+.footer-info-box a {
+    color: #111;
+    text-decoration: none;
+}
+
+.watermark {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    /* margin-bottom: 10vh; */
+}
+
+.watermark p {
+    color: #111;
+    /* font-size: 14px; */
 }
 
