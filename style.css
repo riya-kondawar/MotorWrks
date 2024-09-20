@@ -1,6 +1,6 @@
 /* pp mori font - 19:00 */
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,28 +8,46 @@
     color: #fff;
 }
 
-html, body{
+html,
+body {
     height: 100%;
     width: 100%;
 }
 
-.cursor{
-    height: 15px;
-    width: 15px;
+.cursor {
+    height: 20px;
+    width: 20px;
     border-radius: 50%;
     position: fixed;
     background-color: #edbfff;
     z-index: 8;
     mix-blend-mode: difference;
+    transition: background-image ease 0.5s;
+    background-position: center;
+    background-size: cover;
     /* transition: left linear 0.1s top linear 0.1s; */
 }
 
-.main{
-    background-color: #0F0D0D;
-    z-index: 9;
+#pink {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    z-index: 100;
+    background-color: #edbfff;
+    /* -ms-zoom-animation: 100; */
+    opacity: 0;
+    display: none;
+    transition: opacity all ease 2s;
 }
 
-.page1{
+.main {
+    background-color: #0F0D0D;
+    z-index: 9;
+    cursor: none;
+}
+
+.page1 {
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -37,7 +55,7 @@ html, body{
     z-index: 9;
 }
 
-#nav{
+#nav {
     height: 55px;
     width: 100%;
     display: flex;
@@ -46,65 +64,63 @@ html, body{
     padding: 0 30px;
     position: fixed;
     mix-blend-mode: difference;
-    /* z-index: 102; */
-    
+    z-index: 102;
 }
 
-#nav img{
+#nav img {
     height: 27px;
 }
 
-#nav-part2{
+#nav-part2 {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
 
-#nav #circle{
+#nav #circle {
     height: 18px;
     width: 18px;
     border-radius: 50%;
     background-color: #ffffff;
 }
 
-#nav h4{
+#nav h4 {
     font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
 }
 
-#nav h4:nth-child(1){
+#nav h4:nth-child(1) {
     /* text-decoration: underline; */
     border-bottom: 1.5px solid white;
 }
 
-.page1 h1{
+.page1 h1 {
     font-size: 8vw;
     font-weight: 300;
     font-family: PP mori;
-    margin-top: 12vw;
     margin-left: 6vw;
     /* transform-origin: left; */
 
 }
 
-.page1 h2{
+.page1 h2 {
     font-size: 8vw;
     font-weight: 300;
     margin-left: 26vw;
     /* transform-origin: left; */
 }
 
-.page1 video{
+.page1 video {
     width: 60%;
     margin-top: 10vw;
     position: relative;
     left: 50%;
-    transform: translate(-50%,0);
+    transform: translate(-50%, 0);
 }
 
-.page2{
+.page2 {
     min-height: 130vh;
     width: 100%;
     padding: 100px 5vw;
@@ -113,7 +129,7 @@ html, body{
     z-index: 9;
 }
 
-.page2-container{
+.page2-container {
     height: 60vh;
     width: 100%;
     display: flex;
@@ -122,34 +138,34 @@ html, body{
     /* padding: 0 5vw; */
 }
 
-.page2 h1{
+.page2 h1 {
     font-size: 7vw;
     font-weight: 500;
     color: #111;
     /* transform-origin: left; */
 }
 
-.page2-left{
+.page2-left {
     width: 40%;
 }
 
-.page2-right{
+.page2-right {
     width: 24%;
 }
 
-.page2-left h2{
+.page2-left h2 {
     font-size: 4vw;
     font-weight: 300;
     color: #111;
     line-height: 4vw;
 }
 
-.page2-right p{
+.page2-right p {
     font-size: 28px;
     color: #111;
 }
 
-.page2-right button{
+.page2-right button {
     width: 100%;
     border-radius: 50px;
     border: none;
@@ -159,7 +175,7 @@ html, body{
     margin-top: 20px;
 }
 
-.page3{
+.page3 {
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -168,30 +184,33 @@ html, body{
     /* background-color: aqua; */
 }
 
-.page3 h1{
+.page3 h1 {
     font-size: 6.8vw;
     font-weight: 300;
     color: #111;
     margin-left: 100px;
 }
 
-.page3-part1, .page3-part2{
+.page3-part1,
+.page3-part2 {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 
-.page3-part1 img, .page3-part2 img{
+.page3-part1 img,
+.page3-part2 img {
     height: 400px;
     margin-top: 160px;
 }
 
-.page3-part1 video, .page3-part2 video{
+.page3-part1 video,
+.page3-part2 video {
     height: 400px;
     margin-top: 40px;
 }
 
-.page4{
+.page4 {
     min-height: 100vh;
     width: 100%;
     position: relative;
@@ -199,7 +218,7 @@ html, body{
     padding: 170px 100px;
 }
 
-.elem{
+.elem {
     /* background: salmon; */
     margin-bottom: 10px;
     display: flex;
@@ -208,52 +227,111 @@ html, body{
     position: relative;
 }
 
-.elem img{
+.elem img {
     position: absolute;
     opacity: 0;
     transition: all ease-out 0.5s;
     transform: translateY(10%) rotate(2deg);
 }
-.elem img:nth-child(1){
+
+.elem img:nth-child(1) {
     left: 2%;
     height: 35vh;
 }
-.elem img:nth-child(3){
+
+.elem img:nth-child(3) {
     right: 5%;
     height: 50vh;
 }
 
-.text-div{
+.text-div {
     height: 16vh;
     position: relative;
     z-index: 9;
     overflow: hidden;
 }
 
-.elem h1{
+.elem h1 {
     font-size: 7.5vw;
     font-weight: 600;
     transition: all ease-out 0.5s;
 }
 
-.elem:hover h1{
+.elem:hover h1 {
     transform: translateY(-100%);
     color: #edbfff;
 }
-.elem:hover img{
+
+.elem:hover img {
     /* background-color: black; */
     opacity: 1;
     transform: translateY(0%) rotate(0deg);
 }
 
-.page5{
+.page5 {
     min-height: 100vh;
     width: 100%;
     position: relative;
-    background-color: rgb(66, 170, 66);
     z-index: 9;
+    padding: 140px 100px;
 }
 
+.page5 h2 {
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 50px;
+}
 
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 20px;
+    border-top: 1.5px solid #dadada;
+}
 
+.box:nth-last-child(1) {
+    border-bottom: 1.5px solid #dadada;
+}
+
+footer {
+    height: 90vh;
+    width: 100%;
+    background-color: #edbfff;
+    padding: 100px 100px;
+    color: #111;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-top h2 {
+    font-size: 6.8vw;
+    font-weight: 300;
+}
+
+#gola {
+    background-color: #fff;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #111;
+    font-size: 14px;
+    cursor: none;
+}
+
+.footer-socials{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 

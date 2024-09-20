@@ -5,7 +5,7 @@
 
 function init() {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const locoScroll = new LocomotiveScroll({
         el: document.querySelector(".main"),
         smooth: true
@@ -30,9 +30,9 @@ init();
 
 var crsr = document.querySelector(".cursor")
 var main = document.querySelector(".main")
-main.addEventListener("mousemove",function(dets){
-    crsr.style.left = dets.x+"px"
-    crsr.style.top = dets.y+"px"
+document.addEventListener("mousemove", function (dets) {
+    crsr.style.left = dets.x + 20 + "px"
+    crsr.style.top = dets.y + 20 + "px"
 
 })
 
@@ -40,7 +40,7 @@ var tl = gsap.timeline({
     scrollTrigger: {
         trigger: ".page1 h1",
         scroller: ".main",
-        markers: true,
+        // markers: true,
         start: "top 30%",
         end: "top 0",
         scrub: 2
@@ -48,43 +48,75 @@ var tl = gsap.timeline({
 });
 tl.to(".page1 h1", {
     x: -100,
-},"anim")
+}, "anim")
 
-tl.to(".page1 h2",{
-    x:100
-},"anim")
+tl.to(".page1 h2", {
+    x: 100
+}, "anim")
 
 tl.to(".page1 video", {
     width: "90%"
-},"anim")
+}, "anim")
 
 var tl2 = gsap.timeline({
     scrollTrigger: {
         trigger: ".page1 h1",
         scroller: ".main",
-        markers: true,
+        // markers: true,
         start: "top -115%",
         end: "top -130",
         scrub: 3
     }
 })
 
-tl2.to(".main",{
-    backgroundColor:"#fff"
+tl2.to(".main", {
+    backgroundColor: "#fff"
 })
 
 var tl3 = gsap.timeline({
     scrollTrigger: {
         trigger: ".page1 h1",
         scroller: ".main",
-        markers: true,
+        // markers: true,
         start: "top -280%",
         end: "top -300",
         scrub: 3
     }
 })
-tl3.to(".main",{
+tl3.to(".main", {
     backgroundColor: "#0f0d0d"
 
 })
 
+
+
+var boxes = document.querySelectorAll(".box")
+boxes.forEach(function(elem){
+    elem.addEventListener("mouseenter",function(){
+        var att = elem.getAttribute("data-image")
+        crsr.style.width = "300px" 
+        crsr.style.height = "250px"
+        crsr.style.borderRadius = "0"
+        crsr.style.backgroundImage = `url(${att})`
+    })
+    elem.addEventListener("mouseleave",function(){
+        elem.style.backgroundColor = "transparent"
+        crsr.style.width = "20px" 
+        crsr.style.height = "20px"
+        crsr.style.borderRadius = "50%"
+        crsr.style.backgroundImage = `none`
+    })
+})
+
+var h4 = document.querySelectorAll("#nav h4")
+pink = document.querySelector("#pink")
+h4.forEach(function(elem){
+        elem.addEventListener("mouseenter",function(){
+            pink.style.display = "block"
+            pink.style.opacity = "1"
+        })
+        elem.addEventListener("mouseleave",function(){
+            pink.style.display = "none"
+            pink.style.opacity = "0"
+        })
+    })
